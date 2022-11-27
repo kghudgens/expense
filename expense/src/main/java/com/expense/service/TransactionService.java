@@ -1,14 +1,15 @@
 package com.expense.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import com.expense.entity.TransactionEntity;
 
 public interface TransactionService {
 
-    void createNewTransaction();
+    void createNewTransaction(TransactionEntity entity);
 
-    void viewTransaction(Long id);
+    Optional<TransactionEntity> viewTransaction(Long id);
 
     List<TransactionEntity> viewAllTransactions();
 
