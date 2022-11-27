@@ -9,12 +9,12 @@ public interface ExpenseService {
 
     List<ExpenseEntity> findAll();
 
-    void createNewExpense();
+    void createNewExpense(ExpenseEntity entity);
 
-    void deleteExpense();
+    void deleteExpense(ExpenseEntity entity);
 
     Optional<ExpenseEntity> findById(Long id);
 
-    void save();
+    void deleteAllExpenses();
 
 }

@@ -26,15 +26,13 @@ public class ExpenseServiceImpl implements ExpenseService {
     }
 
     @Override
-    public void createNewExpense() {
-        // TODO Auto-generated method stub
-
+    public void createNewExpense(ExpenseEntity entity) {
+        expenseRepository.save(entity);
     }
 
     @Override
-    public void deleteExpense() {
-        // TODO Auto-generated method stub
-
+    public void deleteExpense(ExpenseEntity entity) {
+        expenseRepository.delete(entity);
     }
 
     @Override
@@ -43,9 +41,8 @@ public class ExpenseServiceImpl implements ExpenseService {
     }
 
     @Override
-    public void save() {
-        // TODO Auto-generated method stub
-
+    public void deleteAllExpenses() {
+        expenseRepository.deleteAll();
     }
 
 }
