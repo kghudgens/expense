@@ -9,9 +9,9 @@ public interface TransactionService {
 
     void createNewTransaction(TransactionEntity entity);
 
-    Optional<TransactionEntity> viewTransaction(Long id);
+    Optional<TransactionEntity> getTransactionById(Long id);
 
-    List<TransactionEntity> viewAllTransactions();
+    List<TransactionEntity> getAllTransactions();
 
     void deleteTransaction(TransactionEntity entity);
 

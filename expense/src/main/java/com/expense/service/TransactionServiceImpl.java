@@ -26,12 +26,12 @@ public class TransactionServiceImpl implements TransactionService {
     }
 
     @Override
-    public Optional<TransactionEntity> viewTransaction(Long id) {
+    public Optional<TransactionEntity> getTransactionById(Long id) {
         return transactionRepository.findById(id);
     }
 
     @Override
-    public List<TransactionEntity> viewAllTransactions() {
+    public List<TransactionEntity> getAllTransactions() {
         return (List<TransactionEntity>) transactionRepository.findAll();
     }
 
