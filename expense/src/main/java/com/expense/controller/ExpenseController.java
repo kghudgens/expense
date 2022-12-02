@@ -58,7 +58,7 @@ public class ExpenseController {
     @PutMapping("expenses/{id}/update")
     public ResponseEntity<ExpenseEntity> updateExpense(@PathVariable Long id, @RequestBody ExpenseEntity entity) {
         ExpenseEntity e = expenseService.findById(id)
-                .orElseThrow(() -> new NoRecordFoundException("Expense does not exist"), HttpStatus.NO_CONTENT);
+                .orElseThrow(() -> new NoRecordFoundException("Entity does not exist", HttpStatus.NO_CONTENT));
 
         e.setName(entity.getName());
         e.setDetails(entity.getDetails());
@@ -67,7 +67,7 @@ public class ExpenseController {
         e.setAmount(entity.getAmount());
         e.setRecurring(entity.getRecurring());
 
-        expenseService.save(e);
+        expenseService.createNewExpense(e);
 
         return new ResponseEntity<ExpenseEntity>(e, HttpStatus.OK);
     }
